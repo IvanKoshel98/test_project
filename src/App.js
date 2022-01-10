@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const Profile = ({ name, email }) => (
+    <div>
+            <p>Name: {name}</p>
+            <p>Email: {email}</p>
     </div>
-  );
-}
+);
+
+const Panel = ({ title, children }) => (
+    <section>
+            <h2>{title}</h2>
+            {children}
+    </section>
+);
+
+const App = () => (
+    <div>
+            <Panel title="User profile">
+                    <Profile name="Mango" email="mango@mail.com" />
+            </Panel>
+    </div>
+);
 
 export default App;
+
